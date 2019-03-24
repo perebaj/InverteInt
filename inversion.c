@@ -3,6 +3,7 @@
 @Date   23/03/2019
 @Brief    Fazer uma função recursiva que permita inverter um número inteiro N. Ex 1234 - 4321
 **/
+
 #include <stdio.h>
 #include <math.h>
 
@@ -16,7 +17,7 @@ int inversion(int value, int dig){
     if(value == 0)//Condição de parada
         return valorInvertido;
 
-    valorInvertido = value%10 * pow(10,dig)  + valorInvertido; //Valor invertido
+    valorInvertido = value%10 * pow(10,dig) + valorInvertido; //Valor invertido
     printf("%d\n", valorInvertido); // Teste de Mesa
     return valorInvertido + inversion(value/10,dig-1); 
 }
@@ -38,7 +39,7 @@ int numDIG(int value){
 
 
 int main(){
-    int valorInicial = 8321;
+    int valorInicial = 1545646;
     int num = numDIG(valorInicial);
     int valorInvertido = inversion(valorInicial,num-1);
     printf("Numero de digitos => %d\n", num);
